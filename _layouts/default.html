@@ -19,10 +19,16 @@
     <h1>{{ site.title }}</h1>
     <nav>
       <!-- Include navigation here -->
+      <ul>
+        {% for item in site.data.navigation %}
+        <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+        {% endfor %}
+      </ul>
     </nav>
   </header>
   <main>
     {{ content }}
+    <div id="feature-content"> </div>
   </main>
   <footer>
     <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
